@@ -40,32 +40,3 @@ return "successfully signed up"
 
 }
   
-
-
-  
- // signin (){
- //     private readonly user = [
-  //      {
- //   
-  //        userName: '',
- //         password: ''
-  //      },
- //     ];
-      
- //  findOne(_firstName: string): Promise<User | undefined> {
- //   return this.user.find(user => user.firstName === userName),( user=> user.password === password);
- // }
-
-
-
- //async validateUser(username: string, password: string): Promise<any> {
- // const user = await this.userModel.findOne();
- // if (user && user.password === password) {
- //   const { password, ...result } = user;
- //   return result;
- // }
- // return null;
-
-
-
-
