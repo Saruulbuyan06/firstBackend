@@ -17,7 +17,6 @@ export class UserController {
     signUp(@Body() data) {
       return this.userService.signUp(data);
     }
-    
     }
   
 
