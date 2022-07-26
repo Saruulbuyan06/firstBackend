@@ -2,7 +2,6 @@ import { Body, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { User } from 'src/models/user.model';
 //import { AppService } from 'src/app.service';
-
 @Injectable()
 export class UserService {
   push: any;
