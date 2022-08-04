@@ -1,13 +1,14 @@
 
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { User } from 'src/models/user.model';
-import { UserController } from './user.controller';
-import { UserService } from './user.service';
+import { AuthService } from 'src/authentication/auth.service';
+import { AuthController } from 'src/authentication/auth.controller';
+import { User } from 'src/models/auth.model';
+import { Verification } from 'src/models/verification.model';
 
 @Module({
   imports: [
-    
+
     SequelizeModule.forRoot({
       dialect: 'mysql',
       host: '13.215.139.119',
@@ -15,12 +16,12 @@ import { UserService } from './user.service';
       username: 'rtd',
       password: 'Tiny722$',
       database: 'Saruul06',
-      models: [User]
+      models: [User, Verification]
     }),
-    SequelizeModule.forFeature([User])],
-  providers: [UserService],
-  controllers:[UserController]
+    SequelizeModule.forFeature([User, Verification])],
+  providers: [AuthService],
+  controllers: [AuthController]
 })
-export class UsersModule {}
+export class UsersModule { }
 
 
