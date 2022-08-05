@@ -50,6 +50,7 @@ export class AuthService {
                 username: createuserDto.username,
                 email: createuserDto.email,
                 phone: createuserDto.phone,
+                password: createuserDto.password,
             },
         });
         if (user) {
@@ -77,7 +78,7 @@ export class AuthService {
         const newVerify = new this.verifyModel({
             userid: newUser.id,
             verifyCode: code,
-            sendDate: new Date(),
+            sendDate: new Date(),// ene yg odoo tsagiig avaad hadgalj bga
             usage: 'SignUp',
             isVerify: false,
         });
