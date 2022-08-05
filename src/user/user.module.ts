@@ -5,6 +5,9 @@ import { AuthService } from 'src/authentication/auth.service';
 import { AuthController } from 'src/authentication/auth.controller';
 import { User } from 'src/models/auth.model';
 import { Verification } from 'src/models/verification.model';
+import { CounselingModel } from 'src/models/counseling.model';
+import { CounselingService } from 'src/counseling/counseling.service';
+import { CounselingController } from 'src/counseling/counseling.controller';
 
 @Module({
   imports: [
@@ -16,11 +19,11 @@ import { Verification } from 'src/models/verification.model';
       username: 'rtd',
       password: 'Tiny722$',
       database: 'Saruul06',
-      models: [User, Verification]
+      models: [User, Verification, CounselingModel]
     }),
-    SequelizeModule.forFeature([User, Verification])],
-  providers: [AuthService],
-  controllers: [AuthController]
+    SequelizeModule.forFeature([User, Verification, CounselingModel])],
+  providers: [AuthService, CounselingService],
+  controllers: [AuthController, CounselingController]
 })
 export class UsersModule { }
 
